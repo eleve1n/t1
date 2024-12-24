@@ -1,0 +1,29 @@
+name: run main.py
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # At 00:00 on Monday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # install the python version needed
+
+      - name: twrp
+        run: |
+          curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+          chmod a+x ~/bin/repo
+          repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+          repo sync
+
+      - name: execute py script # run main.py
+        run: python main.py
+ 
+ 
