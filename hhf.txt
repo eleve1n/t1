@@ -1,0 +1,3 @@
+pip install requests
+python -c "import requests; open('lpunpack.py','wb').write(requests.get('https://raw.githubusercontent.com/unix3dgforce/lpunpack/master/lpunpack.py').content)"
+python lpunpack.py super.img super_out
