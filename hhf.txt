@@ -3,10 +3,8 @@ mkdir -p /crave-devspaces/Lineage22
 cd /crave-devspaces/Lineage22
 repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --depth=1
 
-mkdir -p .repo/local_manifests
-echo '<project name="eleve1n/android_device_lava_LXX525" path="device/lava/LXX525" remote="github" revision="lineage-22.2" />' > .repo/local_manifests/lava.xml
-echo 'projects:' > .repo/manifests/crave.yaml
+echo 'projects:' > .repo/manifests/crave.yaml 
 echo '  LineageOS:' >> .repo/manifests/crave.yaml
 echo '    image: accupara/android-22' >> .repo/manifests/crave.yaml
 echo '    timeout: 7200' >> .repo/manifests/crave.yaml
-crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
+echo '<project name="eleve1n/android_device_lava_LXX525" path="device/lava/LXX525" remote="github" revision="lineage-22.2" />' > .repo/local_manifests/lava.xml
