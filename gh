@@ -1,0 +1,7 @@
+sed -i 's/OS5/OS/' .repo/manifests/crave.yaml
+
+
+cat .repo/manifests/crave.yaml
+
+
+crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
