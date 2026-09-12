@@ -8,4 +8,12 @@ printf '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<project name="eleve
 crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
 
 
-repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
+printf 'projects:\n  LineageOS:\n    image: accupara/android-22\n    timeout: 7200\n' > .repo/manifests/crave.yaml
+
+cat .repo/manifests/crave.yaml
+
+
+projects:
+  LineageOS:
+    image: accupara/android-22
+    timeout: 7200
