@@ -1,7 +1,7 @@
-sed -i 's/OS5/OS/' .repo/manifests/crave.yaml
+python3 -c "open('.repo/manifests/crave.yaml','w').write('projects:\n  LineageOS:\n    image: accupara/android-22\n    timeout: 7200\n')"
 
 
 cat .repo/manifests/crave.yaml
 
 
-crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
+crave run --help
