@@ -6,3 +6,6 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs 
 cd /crave-devspaces/LOS22
 printf '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<project name="eleve1n/android_device_lava_LXX525" path="device/lava/LXX525" remote="github" revision="lineage-22.2" />\n</manifest>\n' > .repo/local_manifests/lava.xml
 crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
+
+
+cd /crave-devspaces/Lineage22
