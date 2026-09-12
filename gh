@@ -8,4 +8,4 @@ crave run --help
 
 crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
 
-crave run --projectid 83 --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
+crave run --project-id 83 --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
