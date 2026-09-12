@@ -9,3 +9,4 @@ crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfa
 
 
 cd /crave-devspaces/Lineage22
+ls .repo/manifests/
