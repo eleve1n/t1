@@ -1,3 +1,1 @@
-pip install requests
-python -c "import requests; open('lpunpack.py','wb').write(requests.get('https://raw.githubusercontent.com/unix3dgforce/lpunpack/master/lpunpack.py').content)"
-python lpunpack.py super.img super_out
+crave run --no-patch -- "git clone https://github.com/eleve1n/android_device_lava_LXX525 -b lineage-22.2 device/lava/LXX525; wget -q -O /tmp/v.zip https://github.com/eleve1n/LXX525_blobs_extractor/releases/download/blobs-LXX525-33594905812/vendor_LXX525.zip; mkdir -p vendor/lava/LXX525 && cd vendor/lava/LXX525 && unzip -q /tmp/v.zip && cp -r lava/LXX525/* . && rm -rf lava && cd ../../..; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
