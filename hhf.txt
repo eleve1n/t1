@@ -18,3 +18,13 @@ printf '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<project name="eleve
 
 crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
 mkdir -p .repo/local_manifests
+
+
+
+
+
+sed -i 's/LineageOS5/LineageOS/' .repo/manifests/crave.yaml
+
+
+
+cat .repo/manifests/crave.yaml
