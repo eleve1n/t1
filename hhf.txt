@@ -12,8 +12,7 @@ printf 'projects:\n  LineageOS:\n    image: accupara/android-22\n    timeout: 72
 
 cat .repo/manifests/crave.yaml
 
+printf '<?xml version="1.0" encoding="UTF-8"?>\n<manifest>\n<project name="eleve1n/android_device_lava_LXX525" path="device/lava/LXX525" remote="github" revision="lineage-22.2" />\n</manifest>\n' > .repo/local_manifests/lava.xml
 
-projects:
-  LineageOS:
-    image: accupara/android-22
-    timeout: 7200
+crave run --no-patch -- "/opt/crave/resync.sh; source build/envsetup.sh; breakfast LXX525 userdebug; mka bacon"
+mkdir -p .repo/local_manifests
