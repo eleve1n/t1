@@ -1,1 +1,4 @@
+
 mkdir -p /crave-devspaces/Lineage22
+cd /crave-devspaces/Lineage22
+repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --depth=1
