@@ -16,3 +16,6 @@ crave run --project-name LineageOS --no-patch -- "echo hello"
 cd /crave-devspaces/Lineage22
 
 crave run --project-name LineageOS --no-patch -- "echo hello"
+
+
+crave run --project-id 83 --no-patch -- "echo hello"
