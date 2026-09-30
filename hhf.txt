@@ -1,1 +1,1 @@
-curl -fsSL https://raw.githubusercontent.com/eleve1n/lxx525-build/main/lxx525-22.1.sh | bash -s -- first
+curl -fsSL https://raw.githubusercontent.com/eleve1n/lxx525-build/main/lxx525-22.1.sh | bash -s -- update 
