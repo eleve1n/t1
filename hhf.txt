@@ -1,1 +1,6 @@
-curl -fsSL https://raw.githubusercontent.com/eleve1n/lxx525-build/main/lxx525-22.1.sh | bash -s -- update 
+curl -fsSL https://raw.githubusercontent.com/eleve1n/lxx525-build/main/lxx525-22.1.sh | bash -s -- update
+
+
+
+git config --global http.version HTTP/1.1
+repo sync -c -j1 --fail-fast 
