@@ -4,3 +4,16 @@ curl -fsSL https://raw.githubusercontent.com/eleve1n/lxx525-build/main/lxx525-22
 
 git config --global http.version HTTP/1.1
 repo sync -c -j1 --fail-fast 
+
+
+
+
+Alternative: Fix it within Windows (Command Prompt)
+
+If you prefer not to download third-party software, you can force Windows to shrink the volume using the command line tool:
+1. Click your Windows Start button, type cmd, right-click Command Prompt, and choose Run as administrator.
+2. Type diskpart and press Enter.
+3. Type list volume and press Enter to see your drives.
+4. Look for the volume number assigned to your F: drive (for example, if it says Volume 3, type select volume 3 and press Enter).
+5. Type shrink desired=22528 and press Enter.
+Did the Diskpart command line successfully shrink the drive for you, or would you like a link to download one of the free partition software tools
