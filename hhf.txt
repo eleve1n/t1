@@ -12,4 +12,5 @@ repo sync -c -j1 --fail-fast
 wsl --manage Ubuntu --resize 100GB
  sudo resize2fs /dev/sda 100G
 sudo mount -o remount,rw /
+mount | grep ' / '
 
