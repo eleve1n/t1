@@ -8,12 +8,17 @@ repo sync -c -j1 --fail-fast
 
 
 
-Alternative: Fix it within Windows (Command Prompt)
 
-If you prefer not to download third-party software, you can force Windows to shrink the volume using the command line tool:
-1. Click your Windows Start button, type cmd, right-click Command Prompt, and choose Run as administrator.
-2. Type diskpart and press Enter.
-3. Type list volume and press Enter to see your drives.
-4. Look for the volume number assigned to your F: drive (for example, if it says Volume 3, type select volume 3 and press Enter).
-5. Type shrink desired=22528 and press Enter.
-Did the Diskpart command line successfully shrink the drive for you, or would you like a link to download one of the free partition software tools
+Step 1: Clean and Shrink the Filesystem inside WSL2
+
+Before forcing a limit from Windows, you must tell the Linux file system to release its deleted data blocks.
+1. Open your WSL2 terminal (Ubuntu).
+2. Force Linux to release deleted space by running:bash
+sudo fstrim -av
+Use code with caution.
+3. Shut down your Linux environment completely so the file is not in use:bash
+history -c && exit
+Use code with caution.
+4. Open Windows PowerShell (as Administrator) and ensure it is fully stopped:powershell
+wsl --shutdown
+Use code with caution.
