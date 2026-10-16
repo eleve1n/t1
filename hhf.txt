@@ -9,38 +9,5 @@ repo sync -c -j1 --fail-fast
 
 
 
-Step 1: Clean and Shrink the Filesystem inside WSL2
-
-Before forcing a limit from Windows, you must tell the Linux file system to release its deleted data blocks.
-1. Open your WSL2 terminal (Ubuntu).
-2. Force Linux to release deleted space by running:bash
-sudo fstrim -av
-Use code with caution.
-3. Shut down your Linux environment completely so the file is not in use:bash
-history -c && exit
-Use code with caution.
-4. Open Windows PowerShell (as Administrator) and ensure it is fully stopped:powershell
-wsl --shutdown
-Use code with caution.
-
-
-
-Step 2: Use Diskpart to Set the 100 GB Cap
-
-Now you will cap the virtual disk file (ext4.vhdx) using the Windows storage utility.
-1. In your Administrator PowerShell window, launch Diskpart:powershell
-diskpart
-Use code with caution.
-2. Select your virtual disk file using the exact location path shown in your screenshot (G:\WSL\ext4.vhdx):powershell
-select vdisk file="G:\WSL\ext4.vhdx"
-Use code with caution.
-3. Compact the disk first to drop its current physical size down immediately:powershell
-compact vdisk
-Use code with caution.
-4. Set the 100 GB maximum size limit. Diskpart measures this value in Megabytes (MB). To set it to exactly 100 GB, calculate 100 × 1024 = 102400:powershell
-expand vdisk maximum=102400
-Use code with caution.
-(Note: Even though the command says "expand", passing a lower number or matching target caps the top boundary limit of a dynamically expanding .vhdx file).
-5. Exit the tool:powershell
-exit
-Use code with caution
+wsl --manage Ubuntu --resize 100GB
+ 
